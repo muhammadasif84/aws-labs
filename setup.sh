@@ -22,9 +22,6 @@ function installPackages(){
 
 ##########Variables##########
 
-read -p "PLease Enter access path  " app_access
-app_access=${app_access:-app}       # set by default value is app
-
 
 if [[ $UID != 0 ]]
 then
@@ -41,6 +38,9 @@ then
     echo "Repos not updated Successfully"
     exit 1
 fi
+
+read -p "PLease Enter access path  " app_access
+app_access=${app_access:-app}       # set by default value is app
 
 installPackages maven
 installPackages tomcat9
