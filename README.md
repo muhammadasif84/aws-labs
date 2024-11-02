@@ -17,4 +17,6 @@ AWS Labs - Project-1  => using shellScript to run the project
 
 6- apt-get install tamcat9
 
+run ./setup.sh to RUN the project.
+
 tomcat9 run on port 8080
