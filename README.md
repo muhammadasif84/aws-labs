@@ -8,5 +8,4 @@ AWS Labs - Project-1
 4- mvn test
 5- mvn package
 6- apt-get install tamcat9
-7-
 
