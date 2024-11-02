@@ -1,8 +1,8 @@
-# aws-shellScript-deployment
+# shellScript-deployment
 
 
 
-AWS Labs - Project-1  => using shellScript to run the project
+DevOps - AWS - LABS - Project-1  => code deployment using shellScript to run the project
 
 
 1- Check if user is a root user?
