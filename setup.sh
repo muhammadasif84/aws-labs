@@ -10,12 +10,21 @@
 function installPackages(){
     local packageName=${1}
     apt-get install -y ${packageName}
+
+    # if ! apt-get install -y ${packageName}
+    # OR
     if [[ $? != 0 ]]
     then
         echo -e "\033[0;31m ${packageName} installation failed"
         exit 1
     fi
  }
+
+##########Variables##########
+
+read -p "PLease Enter access path  " app_access
+app_access=${app_access:-app}       # set by default value is app
+
 
 if [[ $UID != 0 ]]
 then
@@ -25,6 +34,8 @@ fi
 
 apt-get update
 
+# if ! apt-get update 
+#OR
 if [[ $? != 0 ]]
 then
     echo "Repos not updated Successfully"
@@ -51,12 +62,14 @@ then
     exit 1
 fi
 
-cp -rvf target/index.html-0.0.1-SNAPSHOT.war /war/lib/tomcat9/webapps/app.war
+cp -rvf target/index.html-0.0.1-SNAPSHOT.war /war/lib/tomcat9/webapps/${app_access}.war
 
+# if ! cp -rvf target/index.html-0.0.1-SNAPSHOT.war /war/lib/tomcat9/webapps/${app_access}.war
+# OR
 if [[ $? != 0 ]]
 then
     echo -e "\033[0;31; File not Executed"
     exit 1
 fi
 
-
+exit 0          
